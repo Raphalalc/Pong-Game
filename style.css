@@ -1,15 +1,41 @@
+*{
+    margin:0;
+    padding:0;
+}
+
 body{
     background-color: #010101;
     color:white;
+    margin-top:8%;
 }
-div{
+#canvasContainer{
     width: 100%;
     display:flex;
-    margin-top:10%;
     justify-content: center;
 }
+@keyframes opacityOnAndOff {
+   from{
+        opacity: 0;
+    }
+   to{
+        opacity: 1;
+    }
+}
 
+.scoreContainer{
+    position:relative;
+    margin-top:200px;
+    width:500px;
+    margin:auto;
+    margin-bottom:0.2rem;
+    font-weight:bold;
+}
 h3{
+    margin-top:1rem;
+    animation-name : opacityOnAndOff;
+    animation-duration: 2s;
+    animation-iteration-count: infinite ;
     text-align:center;
+
 }
 canvas { border: 3px solid white; }
