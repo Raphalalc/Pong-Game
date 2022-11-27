@@ -113,7 +113,7 @@ if (canvas.getContext) {
     }
 
     function ballCollisionP1(padX, padY){
-        if(ballX + ballSpeedX-ballRadius < padX + 10 && ballX + ballSpeedX > padX && ballY + ballSpeedY > padY && ballY + ballSpeedY < padY + 50){ 
+        if(ballX + ballSpeedX-ballRadius > padX && ballX + ballSpeedX-ballRadius < padX + 10 && ballX + ballSpeedX > padX && ballY + ballSpeedY > padY && ballY + ballSpeedY < padY + 50){ 
           ballSpeedX = -ballSpeedX * 1.1;
           let round = Math.round(ballSpeedX * 100) / 100;
           ballSpeedX = round;
@@ -123,7 +123,7 @@ if (canvas.getContext) {
     }
 
     function ballCollisionP1Limit(padX, padY){
-        if((ballX + ballSpeedX- ballRadius < padX + 10 && ballX + ballSpeedX > padX && ballY + ballSpeedY > padY && ballY + ballSpeedY < padY + 50)){ 
+        if(ballX + ballSpeedX-ballRadius > padX && ballX + ballSpeedX-ballRadius < padX + 10 && ballX + ballSpeedX > padX && ballY + ballSpeedY > padY && ballY + ballSpeedY < padY + 50){ 
           ballSpeedX = -ballSpeedX;
           let round = Math.round(ballSpeedX * 100) / 100;
           ballSpeedX = round;
@@ -133,17 +133,17 @@ if (canvas.getContext) {
     }
   
     function ballCollisionP2(padX, padY){
-        if(ballX + ballSpeedX + ballRadius> padX && ballX + ballSpeedX < padX + 10 && ballY + ballSpeedY > padY && ballY + ballSpeedY < padY + 50){
+        if(ballX + ballSpeedX+ballRadius > padX && ballX + ballSpeedX+ballRadius < padX + 10 && ballX + ballSpeedX < padX && ballY + ballSpeedY > padY && ballY + ballSpeedY < padY + 50){
                 ballSpeedX = -ballSpeedX * 1.1;
                 let round = Math.round(ballSpeedX * 100) / 100;
                 ballSpeedX = round;
                 nombreDeCoups++;
                 impactSound.play();
         }
-    }
+    } 
     
     function ballCollisionP2Limit(padX, padY){
-        if(ballX + ballSpeedX + ballRadius> padX && ballX + ballSpeedX < padX + 10 && ballY + ballSpeedY > padY && ballY + ballSpeedY < padY + 50){
+        if(ballX + ballSpeedX+ballRadius > padX && ballX + ballSpeedX+ballRadius < padX + 10 && ballX + ballSpeedX < padX && ballY + ballSpeedY > padY && ballY + ballSpeedY < padY + 50){
                 ballSpeedX = -ballSpeedX;
                 let round = Math.round(ballSpeedX * 100) / 100;
                 ballSpeedX = round;
