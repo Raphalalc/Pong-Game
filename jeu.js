@@ -156,7 +156,7 @@ if (canvas.getContext) {
         drawScore1();
         drawScore2(); 
         drawBall();
-        p.innerHTML = "Nombre de coups : " + nombreDeCoups;
+        p.innerHTML = "Number of hits : " + nombreDeCoups;
         if(nombreDeCoups <=13){
             ballCollisionP1(Paddle1X, Paddle1Y);
         }

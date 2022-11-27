@@ -9,12 +9,26 @@
 </head>
 <body>
     
-    <div class ="scoreContainer"><p>Nombre de coups : 0</p> </div>
+    <div class ="scoreContainer"><p>Number of hits : 0</p> </div>
     <div id="canvasContainer">
         <canvas id="tutorial" width="500" height="250">
         </canvas>
     </div>
         <h3>Press SPACE to start the game</h3>
+
+        <div id="trait"></div>
+        <div class="parent">
+            <div class="div1">
+                <img src="img/keyZ.png" width="30" height="30" alt="">
+                <img src="img/keyS.png" width="30" height="30" alt="">
+                <p>To move up and down for <span id="p1">Player 1</span> </p>
+            </div>
+            <div class="div2"> 
+                <img src="img/keyUp.png" width="30" height="30" alt="">
+                <img src="img/keyDown.png" width="30" height="30" alt="">
+                <p>To move up and down for <span id="p2">Player 2</span></p>
+            </div>
+        </div>
     <script src="./jeu.js"></script>
 </body>
 </html>
