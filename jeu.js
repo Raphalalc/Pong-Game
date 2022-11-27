@@ -1,10 +1,8 @@
 var canvas = document.getElementById('tutorial');
 document.addEventListener("keydown", Start, false);
 
-
 h3 = document.querySelector('h3');
 p = document.querySelector('p');
-console.log(p);
 
 var ctx = canvas.getContext('2d');
 var x = 40;
@@ -30,6 +28,7 @@ var changeDirection = true;
 var score1 = 0;
 var score2 = 0;
 
+var impactSound = new Audio('./music/impact.mp3');
 
 
 function Start(e) {
@@ -116,8 +115,7 @@ if (canvas.getContext) {
         if(ballX + ballSpeedX-ballRadius < padX + 10 && ballX + ballSpeedX > padX && ballY + ballSpeedY > padY && ballY + ballSpeedY < padY + 50){ 
           ballSpeedX = -ballSpeedX * 1.1;
           nombreDeCoups++;
-          console.log("nombre de coups " + nombreDeCoups);
-          console.log("vitesse de la balle " + ballSpeedX);
+          impactSound.play();
             }
     }
 
@@ -125,8 +123,7 @@ if (canvas.getContext) {
         if((ballX + ballSpeedX- ballRadius < padX + 10 && ballX + ballSpeedX > padX && ballY + ballSpeedY > padY && ballY + ballSpeedY < padY + 50)){ 
           ballSpeedX = -ballSpeedX;
           nombreDeCoups++;
-          console.log("nombre de coups " + nombreDeCoups);
-          console.log("vitesse de la balle " + ballSpeedX);
+          impactSound.play();
             }
     }
   
@@ -134,8 +131,7 @@ if (canvas.getContext) {
         if(ballX + ballSpeedX + ballRadius> padX && ballX + ballSpeedX < padX + 10 && ballY + ballSpeedY > padY && ballY + ballSpeedY < padY + 50){
                 ballSpeedX = -ballSpeedX * 1.1;
                 nombreDeCoups++;
-                console.log("nombre de coups "+nombreDeCoups);
-                console.log("vitesse de la balle " + ballSpeedX);
+                impactSound.play();
         }
     }
     
@@ -143,8 +139,7 @@ if (canvas.getContext) {
         if(ballX + ballSpeedX + ballRadius> padX && ballX + ballSpeedX < padX + 10 && ballY + ballSpeedY > padY && ballY + ballSpeedY < padY + 50){
                 ballSpeedX = -ballSpeedX;
                 nombreDeCoups++;
-                console.log("nombre de coups "+nombreDeCoups);
-                console.log("vitesse de la balle " + ballSpeedX);
+                impactSound.play();
         }
     }
 
