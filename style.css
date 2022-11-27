@@ -31,7 +31,7 @@ body{
     font-weight:bold;
     min-width:320px;
 }
-#tutorial{
+#pong{
     width:500px;
     height: 250px;
     min-width:280px;
@@ -108,7 +108,7 @@ h3{
 canvas { border: 3px solid white; }
 
 @media screen and (max-width: 620px) {
-    #tutorial{
+    #pong{
         width:70%;
         height:auto;
      
