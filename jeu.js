@@ -1,4 +1,4 @@
-var canvas = document.getElementById('tutorial');
+var canvas = document.getElementById('pong');
 document.addEventListener("keydown", Start, false);
 
 h3 = document.querySelector('h3');
@@ -20,8 +20,6 @@ var downPressed = false;
 var nombreDeCoups =0;
 var frame = 10;
 
-var keys=[];
-
 var alreadyStart= false;
 var start;
 var changeDirection = true;
@@ -30,6 +28,9 @@ var score2 = 0;
 
 var impactSound = new Audio('./music/impact.mp3');
 impactSound.volume = 0.2;
+
+var keys=[];
+
 
 function Start(e) {
     if (e.keyCode == 32 && alreadyStart == false)  { 
@@ -114,6 +115,8 @@ if (canvas.getContext) {
     function ballCollisionP1(padX, padY){
         if(ballX + ballSpeedX-ballRadius < padX + 10 && ballX + ballSpeedX > padX && ballY + ballSpeedY > padY && ballY + ballSpeedY < padY + 50){ 
           ballSpeedX = -ballSpeedX * 1.1;
+          let round = Math.round(ballSpeedX * 100) / 100;
+          ballSpeedX = round;
           nombreDeCoups++;
           impactSound.play();
             }
@@ -122,6 +125,8 @@ if (canvas.getContext) {
     function ballCollisionP1Limit(padX, padY){
         if((ballX + ballSpeedX- ballRadius < padX + 10 && ballX + ballSpeedX > padX && ballY + ballSpeedY > padY && ballY + ballSpeedY < padY + 50)){ 
           ballSpeedX = -ballSpeedX;
+          let round = Math.round(ballSpeedX * 100) / 100;
+          ballSpeedX = round;
           nombreDeCoups++;
           impactSound.play();
             }
@@ -130,6 +135,8 @@ if (canvas.getContext) {
     function ballCollisionP2(padX, padY){
         if(ballX + ballSpeedX + ballRadius> padX && ballX + ballSpeedX < padX + 10 && ballY + ballSpeedY > padY && ballY + ballSpeedY < padY + 50){
                 ballSpeedX = -ballSpeedX * 1.1;
+                let round = Math.round(ballSpeedX * 100) / 100;
+                ballSpeedX = round;
                 nombreDeCoups++;
                 impactSound.play();
         }
@@ -138,6 +145,8 @@ if (canvas.getContext) {
     function ballCollisionP2Limit(padX, padY){
         if(ballX + ballSpeedX + ballRadius> padX && ballX + ballSpeedX < padX + 10 && ballY + ballSpeedY > padY && ballY + ballSpeedY < padY + 50){
                 ballSpeedX = -ballSpeedX;
+                let round = Math.round(ballSpeedX * 100) / 100;
+                ballSpeedX = round;
                 nombreDeCoups++;
                 impactSound.play();
         }
