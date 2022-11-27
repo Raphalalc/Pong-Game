@@ -29,7 +29,7 @@ var score1 = 0;
 var score2 = 0;
 
 var impactSound = new Audio('./music/impact.mp3');
-
+impactSound.volume = 0.2;
 
 function Start(e) {
     if (e.keyCode == 32 && alreadyStart == false)  { 
