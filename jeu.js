@@ -54,7 +54,6 @@ document.body.addEventListener("keyup", function (e) {
   
   
 if (canvas.getContext) {
-       
     function drawPaddle1(){
         ctx.beginPath();
         ctx.rect(Paddle1X, Paddle1Y, 10, 50);
@@ -239,7 +238,7 @@ if (canvas.getContext) {
            h3.innerHTML = "Press Space to restart the game";
         }
         if(score1 ==3){
-            drawPlayer1Win();
+           drawPlayer1Win();
            gameOver();
           
         }
