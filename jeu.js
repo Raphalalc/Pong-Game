@@ -251,5 +251,5 @@ if (canvas.getContext) {
     draw();
 
 } else {
-    console.log("ça marche pas");
+    console.log("Script doesn't work");
 }
